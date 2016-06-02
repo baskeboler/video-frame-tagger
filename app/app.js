@@ -7,7 +7,8 @@
         'myApp.view1',
         'myApp.view2',
         'myApp.version',
-        'gg.directives'
+        'gg.directives',
+        'angularFileUpload',
     ]).config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
         $locationProvider.hashPrefix('!');
 

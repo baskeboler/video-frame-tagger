@@ -15,7 +15,15 @@
 </div>
 <div class="row">
 
-
+    <form class="form">
+        <div class="form-group">
+            <label class="control-label">
+                Video
+            </label>
+            <select class="form-control" ng-options="option as option.name for option in vm.videos"
+                    ng-model="vm.selectedVideo"></select>
+        </div>
+    </form>
 </div>
 <div class="row">
     <div class="col col-md-8">
