@@ -12,8 +12,8 @@
         }])
 
         .controller('View1Ctrl', View1Ctrl);
-    View1Ctrl.$inject = ['ImageService'];
-    function View1Ctrl(ImageService) {
+    View1Ctrl.$inject = ['ImageService', 'Video'];
+    function View1Ctrl(ImageService, Video) {
         var vm = this;
         vm.videos = [{
             name: 'video1.mp4'
@@ -27,7 +27,13 @@
         vm.imageUrl = 'image.jpg';
         vm.image = ImageService.getImage(vm.imageUrl);
         vm.update = update;
+        activate();
 
+        function activate() {
+            Video.query({}).then(function (res) {
+                vm.videos = res;
+            })
+        }
         function update() {
             vm.image = ImageService.getImage(vm.imageUrl);
         }

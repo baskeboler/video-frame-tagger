@@ -14,6 +14,8 @@
     "imgareaselect": "^0.9.10",
     "jquery": "^2.2.4",
     "bootstrap": "^3.3.6",
-    "angular-file-upload": "^2.3.3"
+    "angular-file-upload": "^2.3.3",
+    "angular-ui-slider": "^0.3.2",
+    "angular-resource": "^1.5.6"
   }
 }

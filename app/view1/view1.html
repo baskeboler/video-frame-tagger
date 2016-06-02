@@ -14,16 +14,57 @@
     </div>
 </div>
 <div class="row">
+    <div class="col col-md-6">
 
-    <form class="form">
-        <div class="form-group">
-            <label class="control-label">
-                Video
-            </label>
-            <select class="form-control" ng-options="option as option.name for option in vm.videos"
-                    ng-model="vm.selectedVideo"></select>
+        <form class="form">
+            <div class="form-group">
+                <label class="control-label">
+                    Video
+                </label>
+                <select class="form-control" ng-options="option as option.name for option in vm.videos"
+                        ng-model="vm.selectedVideo"></select>
+            </div>
+            <div class="form-group">
+                <label class="control-label">
+                    Frame
+                </label>
+                <div ui-slider min="0" max="10000" ng-model="vm.frameNumber"></div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-addon"> Frame number:</div>
+                    <input type="number" ng-model="vm.frameNumber" class="form-control">
+                    <div class="input-group-btn">
+
+                        <button class="btn btn-default">Fetch Frame</button>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+    <div class="col col-md-6">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <div class="panel-title">
+                    Video Information
+                </div>
+            </div>
+
+            <div class="panel-body">
+                <dl class="dl-horizontal">
+                    <dt>Name</dt>
+                    <dd>{{vm.selectedVideo.name}}</dd>
+                    <dt>Codec Name</dt>
+                    <dd>{{vm.selectedVideo.metadata.streams[0].codec_name}}</dd>
+                    <dt>Duration</dt>
+                    <dd>{{vm.selectedVideo.metadata.streams[0].duration}}</dd>
+                    <dt>Number of frames</dt>
+                    <dd>{{vm.selectedVideo.metadata.streams[0].nb_frames}}</dd>
+                </dl>
+            </div>
         </div>
-    </form>
+    </div>
 </div>
 <div class="row">
     <div class="col col-md-8">

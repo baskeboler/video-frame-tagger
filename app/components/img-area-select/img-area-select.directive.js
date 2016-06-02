@@ -36,6 +36,12 @@
                 initImage();
 
             });
+            scope.$on('$destroy', function () {
+                $(element).imgAreaSelect({
+                    remove: true
+                });
+            });
+            
             function initImage() {
                 var i = ImageService.getImage(element.attr('src'));
                 i.naturalWidth = element.prop('naturalWidth');
