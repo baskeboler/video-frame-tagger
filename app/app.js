@@ -11,6 +11,7 @@
         'gg.directives',
         'angularFileUpload',
         'ui.slider',
+        'ui.bootstrap',
     ]).config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
         $locationProvider.hashPrefix('!');
 

@@ -27,6 +27,7 @@
         vm.imageUrl = 'image.jpg';
         vm.image = ImageService.getImage(vm.imageUrl);
         vm.update = update;
+        vm.fetchFrame = fetchFrame;
         activate();
 
         function activate() {
@@ -34,6 +35,11 @@
                 vm.videos = res;
             })
         }
+
+        function fetchFrame() {
+            vm.imageUrl = '/api/video/' + vm.selectedVideo.id + '/frame/' + vm.frameNumber;
+        }
+
         function update() {
             vm.image = ImageService.getImage(vm.imageUrl);
         }
