@@ -1,0 +1,26 @@
+{
+  "name": "video-frame-tagger",
+  "scripts": {
+  },
+  "env": {
+    "FFMPEG_BIN_URL": {
+      "required": true
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "addons": [
+
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "https://github.com/issueapp/heroku-buildpack-ffmpeg"
+    }
+  ]
+}
