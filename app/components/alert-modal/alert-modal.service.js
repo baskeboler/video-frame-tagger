@@ -17,8 +17,19 @@
         return service;
 
         ////////////////
-
         function info(message) {
+            return openAlert('Information', message);
+        }
+
+        function warning(message) {
+            return openAlert('Warning', message);
+        }
+
+        function danger(message) {
+            return openAlert('Danger', message);
+        }
+
+        function openAlert(title, message) {
             return $uibModal.open({
                 templateUrl: 'components/alert-modal/alert-modal.html',
                 controller: 'AlertModalController',
@@ -26,7 +37,7 @@
                 size: 'sm',
                 resolve: {
                     title: function () {
-                        return 'Information';
+                        return title;
                     },
                     message: function () {
                         return message;

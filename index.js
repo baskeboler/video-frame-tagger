@@ -12,7 +12,7 @@ var port = process.env.PORT || 3000;
 app.use(morgan('combined'));
 app.use(bodyParser.json());
 
-app.use(express.static('app'));
+app.use(express.static(`${__dirname}/app`));
 app.use('/api/video', videoHandler);
 
 app.get('/', function (req, res) {
