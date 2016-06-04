@@ -18,7 +18,8 @@
     "shelljs": "^0.6.0"
   },
   "scripts": {
-    "prestart": "npm install && bower install"
+    "prestart": "npm install",
+    "postinstall": "bower install"
   },
   "dependencies": {
     "body-parser": "^1.15.1",
