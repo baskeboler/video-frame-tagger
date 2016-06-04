@@ -7,6 +7,8 @@ var morgan = require('morgan');
 var bodyParser = require('body-parser');
 var videoHandler = require('./api/video');
 
+var port = process.env.PORT || 3000;
+
 app.use(morgan('combined'));
 app.use(bodyParser.json());
 
@@ -18,5 +20,5 @@ app.get('/', function (req, res) {
 });
 
 app.listen('5000', function () {
-    console.log('Server started');
+    console.log(`Server started, listening on port ${port}`);
 });
