@@ -19,6 +19,6 @@ app.get('/', function (req, res) {
     res.send('Hello!');
 });
 
-app.listen('5000', function () {
+app.listen(port, function () {
     console.log(`Server started, listening on port ${port}`);
 });
